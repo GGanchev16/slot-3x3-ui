@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import icons
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./bet-dropdown.css";
 
 interface IBetDropdown {

@@ -6,19 +6,13 @@ import { Slot, BottomBar } from "../components";
 import "./home.css";
 
 export const Home = () => {
-  const [isBtnDisabled, setIsBtnDisabled] = useState(false);
   const [balance, setBalance] = useState(
     Number(sessionStorage.getItem("balance")) || 0
   );
-
+  const [isBtnDisabled, setIsBtnDisabled] = useState(false);
   const [resultMatrix, setResultMatrix] = useState<number[][] | null>(null);
-  const [lastWin, setLastWin] = useState(0);
   const [bet, setBet] = useState(10);
-  const [rows, setRows] = useState<number[][]>([
-    [1, 2, 3],
-    [4, 5, 1],
-    [2, 3, 4],
-  ]);
+  const [lastWin, setLastWin] = useState(0);
   const [currentWin, setCurrentWin] = useState(0);
 
   const onSuccess = (data: IPlayResponse) => {
@@ -33,7 +27,7 @@ export const Home = () => {
 
   const onError = (error: any) => {
     setBalance(balance + bet);
-    console.log(error);
+    console.error(error);
     setIsBtnDisabled(false);
   };
 
@@ -47,7 +41,6 @@ export const Home = () => {
     setBalance(balance - bet);
     setIsBtnDisabled(true);
     setResultMatrix(null);
-
     spinMutation.mutate(bet);
   };
 
@@ -58,15 +51,15 @@ export const Home = () => {
   return (
     <div className="home-container">
       <h1 className="home-heading">Lucky Halloween</h1>
-      <Slot resultMatrix={resultMatrix} rows={rows} setRows={setRows} />
+      <Slot resultMatrix={resultMatrix} />
       <BottomBar
         bet={bet}
         setBet={setBet}
-        lastWin={lastWin}
-        handleSpin={handleSpin}
         balance={balance}
-        isBtnDisabled={isBtnDisabled}
         setBalance={setBalance}
+        handleSpin={handleSpin}
+        isBtnDisabled={isBtnDisabled}
+        lastWin={lastWin}
         currentWin={currentWin}
       />
     </div>

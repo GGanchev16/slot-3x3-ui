@@ -34,7 +34,7 @@ export const BottomBar = ({
     setBalance(balance + data.netResult);
   };
   const onError = (err: any) => {
-    console.log(err);
+    console.error(err);
   };
   const simMutation = useSim(onSuccess, onError);
 
@@ -47,7 +47,6 @@ export const BottomBar = ({
       alert("Insufficient balance");
       return;
     }
-
     simMutation.mutate({ count, bet });
   };
 
