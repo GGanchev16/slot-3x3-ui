@@ -1,0 +1,37 @@
+.slot-machine-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot-machine-grid {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  transition: transform 3s ease-out;
+}
+
+.slot-row {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot-item {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  padding: 0;
+}
+
+.slot-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

@@ -1,0 +1,61 @@
+.bottom-bar-wrapper {
+  width: 90%;
+}
+
+.bottom-bar {
+  border: 1.5px solid #f39924;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .bottom-bar {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .balance-display {
+    font-size: 18px;
+  }
+}
+
+.spin-button {
+  padding: 10px 30px;
+  font-size: 16px;
+  border: 1px solid #f39924;
+}
+
+.btns-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sim-button {
+  margin-top: 4px;
+  background-color: #f39924;
+}
+
+.sim-dialog {
+  position: absolute;
+  background-color: #242424;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: 1px solid #f39924;
+}
+
+.sim-options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+
+.sim-option-button {
+  border: 1px solid #f39924;
+}
